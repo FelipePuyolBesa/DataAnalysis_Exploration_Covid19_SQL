@@ -18,7 +18,7 @@ Make some basic data exploration on SQL to understand a given data set.
 
 ![Covid2](https://user-images.githubusercontent.com/124479181/216799458-10f69104-c7b8-4e46-bb0d-62677d3358ae.png)
 
-3. We loaded the data set on Microsoft SQL Server in two different tables.
+2. We loaded the data set on Microsoft SQL Server in two different tables.
 
 ![Covid3](https://user-images.githubusercontent.com/124479181/216799543-0ee3eda2-2d55-408b-a612-01b7eb62d08a.png)
 
