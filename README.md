@@ -31,8 +31,7 @@ Query all the CovidDeaths data order by location and then for date.
     ORDER BY 3, 4;
     
     
-!Covid4
-
+![Covid4](https://user-images.githubusercontent.com/124479181/216799578-b65f8ab9-8d55-433b-900b-fd47467840e6.png)
 
 Query  the columns we are interested
 
@@ -41,7 +40,7 @@ Query  the columns we are interested
     WHERE total_cases IS NOT NULL
     ORDER BY 1, 2;
     
- !Covid5
+ ![Covid5](https://user-images.githubusercontent.com/124479181/216799588-b8de273e-4534-4174-98a6-20acd98bae21.png)
 
 
 
@@ -52,7 +51,7 @@ Calculating the deaths_percentage in Chile, we have to the 2022-03-02 a total of
     WHERE total_cases IS NOT NULL AND location LIKE 'Chile'
     ORDER BY 1, 2
 
-!Covid6
+![Covid6](https://user-images.githubusercontent.com/124479181/216799592-f4c0b8e0-34e1-4f79-80c9-06d0acb73041.png)
 
 
 Chile is at Rank 90 of countries with more deaths percentage.
@@ -62,9 +61,10 @@ Chile is at Rank 90 of countries with more deaths percentage.
     WHERE total_cases IS NOT NULL AND date LIKE '2022-03-02'
     ORDER BY 5 DESC
     
- !Covid7
+ ![Covid7](https://user-images.githubusercontent.com/124479181/216799598-3c1b7c99-20a4-430e-90ae-13d02ef01c87.png)
 
-!Covid8
+![Covid8](https://user-images.githubusercontent.com/124479181/216799610-36d361e5-08bd-427e-bcb6-efae08cfa830.png)
+
 
 
 Almost the 16.13% of the population in Chile have had Covid 
@@ -74,7 +74,7 @@ Almost the 16.13% of the population in Chile have had Covid
     WHERE location LIKE 'Chile'
     ORDER BY 1, 2;
 
-!Covid9
+![Covid9](https://user-images.githubusercontent.com/124479181/216799618-34be1487-a447-4b42-877c-46c82031a3a4.png)
 
 
 The top five countries by cases percentage for the total population are countries with low population.
@@ -84,7 +84,7 @@ The top five countries by cases percentage for the total population are countrie
     WHERE date LIKE '2022-03-02'
     ORDER BY 5 DESC;
     
-!Covid10
+![Covid10](https://user-images.githubusercontent.com/124479181/216799622-4047f4b5-a777-41b2-b0bd-f5fbd4e362a0.png)
 
 
 Group by for looking the cases percentages
@@ -93,7 +93,7 @@ Group by for looking the cases percentages
     FROM Covid19..CovidDeaths GROUP BY location, population
     ORDER BY PercentagePopulationInfected DESC
     
-!Covid11
+![Covid11](https://user-images.githubusercontent.com/124479181/216799633-9e276f34-5925-4335-8e06-3da2f291d328.png)
 
 
 Showing the countries with highest death count by population
@@ -104,7 +104,7 @@ Showing the countries with highest death count by population
 
 Here we can see that the top countries per percentage deaths by population are south European countries, and the highest rate is for Peru.
 
-!Covid12
+![Covid12](https://user-images.githubusercontent.com/124479181/216799647-aea0b607-1854-404c-b2fd-e83f05b8b54f.png)
 
 
 Quering the data we can see an error, the total_deaths atrribute has been define as Varchar, so we can use CAST function to used it as an integer.
@@ -113,7 +113,7 @@ Quering the data we can see an error, the total_deaths atrribute has been define
     FROM Covid19..CovidDeaths GROUP BY location
     ORDER BY DeathsCount DESC
 
-!Covid13
+![Covid13](https://user-images.githubusercontent.com/124479181/216799652-4732b513-f3b2-44f2-a96d-893ab471b03b.png)
 
 Querying the data we can see an error, we have aggrupations for continents, region and income. So we have to filter the data.
 All this aggrupations does not have a value in continent.
@@ -126,7 +126,7 @@ All this aggrupations does not have a value in continent.
 
 So the top three countries by deaths are USA, Brazil and India.
 
-!Covid14
+![Covid14](https://user-images.githubusercontent.com/124479181/216799657-77d216db-83d8-4ae4-8896-7973abe08078.png)
 
 
 Breaking Down the deaths count by aggrupations, we can see the total deaths on the world and  Europe, as continent, has the highest quantity.
