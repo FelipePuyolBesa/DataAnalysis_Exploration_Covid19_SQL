@@ -137,7 +137,7 @@ Breaking Down the deaths count by aggrupations, we can see the total deaths on t
     GROUP BY location
     ORDER BY DeathsCount DESC
 
-!Covid15
+![Covid15](https://user-images.githubusercontent.com/124479181/216799679-a91c2d29-220d-4d96-b178-a916e813e425.png)
 
 
 Now we want to know the total cases by date
@@ -148,7 +148,7 @@ Now we want to know the total cases by date
     GROUP BY date
     ORDER BY date
 
-!Covid16
+![Covid16](https://user-images.githubusercontent.com/124479181/216799685-8eb5436c-3753-4b46-9ea5-0fae0eba573d.png)
 
 Now we calculate the total deaths percentage by date
 
@@ -158,7 +158,7 @@ Now we calculate the total deaths percentage by date
     GROUP BY date
     ORDER BY date
 
-!Covid17
+![Covid17](https://user-images.githubusercontent.com/124479181/216799697-ea0d8b13-de08-4dbc-8b6b-65efd4149f51.png)
 
 
 The total deaths percentage is 1.35% to the date.
@@ -167,7 +167,7 @@ The total deaths percentage is 1.35% to the date.
     FROM Covid19..CovidDeaths
     WHERE continent IS NOT NULL
 
-!Covid18
+![Covid18](https://user-images.githubusercontent.com/124479181/216799699-931e42d6-5583-45f6-9c40-4c4b839bb1f5.png)
 
 
 Join the two tables to see the new vaccinations per day
@@ -179,7 +179,7 @@ Join the two tables to see the new vaccinations per day
     WHERE DEA.continent IS NOT NULL
     ORDER BY DEA.location, DEA.date
 
-!Covid19
+![Covid19](https://user-images.githubusercontent.com/124479181/216799714-245f5e4c-4010-4080-99f4-9a33313ffce7.png)
 
 Looking at the cumulative quantity new vaccinations per day in Chile
 
@@ -192,7 +192,7 @@ Looking at the cumulative quantity new vaccinations per day in Chile
     WHERE DEA.continent IS NOT NULL AND DEA.location LIKE 'Chile'
     ORDER BY DEA.location, DEA.date
 
-!Covid20
+![Covid20](https://user-images.githubusercontent.com/124479181/216799722-8b440036-8a1d-4af2-82a6-13d9c3315cd9.png)
 
 
 Calculation of the accumulated percentage of vaccinations
@@ -210,7 +210,7 @@ Calculation of the accumulated percentage of vaccinations
     SELECT *, (CumulativeVaccinations/population)*100 AS CumulativeVaccinationsPercentage
     FROM PopvsVac
 
-!Covid21
+![Covid21](https://user-images.githubusercontent.com/124479181/216799736-757e493e-a62a-4d6f-ae4a-093d9e4febdf.png)
 
 
 Calculation of the accumulated percentage of vaccinations with a temp table
@@ -239,7 +239,7 @@ Calculation of the accumulated percentage of vaccinations with a temp table
     SELECT *, (CumulativeVaccinations/Population)*100 AS CumulativeVaccinationsPercentage
     FROM #PercentPopulationVaccinated;
 
-!Covid22
+![Covid22](https://user-images.githubusercontent.com/124479181/216799747-eb374916-281b-42f8-9a10-ac159b268da5.png)
 
 
 Creating a view to be used in data visualization
@@ -255,7 +255,7 @@ Creating a view to be used in data visualization
         DEA.location = VAC.location
         WHERE DEA.continent IS NOT NULL AND DEA.location LIKE 'Chile'
 
-!Covid23
+![Covid23](https://user-images.githubusercontent.com/124479181/216799756-a679ff14-ffce-4f07-82bd-fb4db8eb0e8d.png)
 
 ## Views creation for data analysis!
 
@@ -272,7 +272,7 @@ Querying COVID_DB view
     SELECT * FROM COVID_DB
     ORDER BY location, date
 
-!Covid24
+![Covid24](https://user-images.githubusercontent.com/124479181/216799766-cf6c2334-6e18-43b5-959f-e0eae5e60650.png)
 
 -- View with only countries data, cleaning aggrupations
 
@@ -286,7 +286,7 @@ Querying COVID_DB_COUNTRIES view
 
     SELECT * FROM COVID_DB_COUNTRIES
     ORDER BY location, date
-!Covid25
+![Covid25](https://user-images.githubusercontent.com/124479181/216799769-540e7745-ba6e-45aa-86a4-eef42f3cdfb9.png)
 
 
 View with data for income aggrupations
@@ -302,7 +302,7 @@ Querying COVID_DB_INCOME view
     SELECT * FROM COVID_DB_INCOME
     ORDER BY location, date
 
-!Covid26
+![Covid26](https://user-images.githubusercontent.com/124479181/216799774-cf23c4d1-760b-43fb-85e7-817edd5c3484.png)
 
 
 View with data for continents
@@ -318,7 +318,7 @@ Querying COVID_DB_CONTINENTS view
     SELECT * FROM COVID_DB_CONTINENTS
     ORDER BY location, date
 
-!Covid27
+![Covid27](https://user-images.githubusercontent.com/124479181/216799781-a6fdcd7d-9fdb-42aa-a323-ba06d63cba42.png)
 
 
 View with data for all the world
@@ -334,7 +334,7 @@ Querying COVID_DB_WORLD view
     SELECT * FROM COVID_DB_WORLD
     ORDER BY location, date
 
-!Covid28
+![Covid28](https://user-images.githubusercontent.com/124479181/216799793-9db70874-cbfa-40d7-8815-e755c5480bc1.png)
 
 
 ### Some analysis by country
@@ -346,7 +346,7 @@ Top five countries by people fully vaccinated
     GROUP BY location
     ORDER BY Fully_vaccinated DESC
 
-!Covid29
+![Covid29](https://user-images.githubusercontent.com/124479181/216799802-6ed6fb84-9eb5-4c0b-a586-a696ca88a209.png)
 
 
 Top five countries by less people fully vaccinated NOT NULL
@@ -356,7 +356,7 @@ Top five countries by less people fully vaccinated NOT NULL
     GROUP BY location
     ORDER BY Percentage_Fully_vaccinated DESC
 
-!Covid30
+![Covid30](https://user-images.githubusercontent.com/124479181/216799810-70c9e212-28d9-4768-940f-5ba2cb9a0d36.png)
 
 
 Top five countries by less people fully vaccinated over population NOT NULL
@@ -367,7 +367,7 @@ Top five countries by less people fully vaccinated over population NOT NULL
     HAVING MAX(CAST(people_fully_vaccinated AS INT)/population)*100 > 0
     ORDER BY Percentage_Fully_vaccinated
 
-!Covid31
+![Covid31](https://user-images.githubusercontent.com/124479181/216799823-14bc8e0e-4145-41cd-b229-a0418d6b27e0.png)
 
 ### Some analysis by income
 
@@ -376,4 +376,4 @@ Top five countries by less people fully vaccinated over population NOT NULL
     GROUP BY location
     ORDER BY cases DESC
 
-!Covid32
+![Covid32](https://user-images.githubusercontent.com/124479181/216799834-d250f321-19d7-4459-8ed7-6a010d198bae.png)
